@@ -1,0 +1,26 @@
+{
+  "name": "team-tasks",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/app.js",
+  "scripts": {
+    "dev": "nodemon server",
+    "dev-debug": "DEBUG=express:* nodemon server",
+    "docker-pg-create-image": "docker build -t postgres_pt_br:11.1 -f docker/Dockerfile .",
+    "docker-pg-run": "docker rm docker-postgresql --force && docker run -t -v $HOME/pgdata:/var/lib/postgresql/data -e POSTGRES_PASSWORD=postgres -p 5432:5432 --name docker-postgresql postgres_pt_br:11.1"
+  },
+  "author": "Victor Menegusso",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "express": "^4.16.4",
+    "express-promise-router": "^3.0.3",
+    "pg": "^7.6.0"
+  },
+  "devDependencies": {
+    "eslint": "^5.9.0",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-plugin-import": "^2.14.0",
+    "nodemon": "^1.18.6"
+  }
+}
