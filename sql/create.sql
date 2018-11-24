@@ -6,7 +6,7 @@ CREATE TABLE public.tasks (
 	"type" varchar(20) NOT NULL,
 	status varchar(20) NOT NULL,
 	create_at timestamp NOT NULL,
-	start_at timestamp NOT NULL,
+	start_at timestamp NULL,
 	finish_at timestamp NULL,
 	"owner" varchar NOT NULL,
 	responsible varchar NULL,
